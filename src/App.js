@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { Link} from "react-router-dom";
 
 const API_URL = "http://localhost:8000/api/products/";
 
@@ -39,7 +40,7 @@ function App() {
     }
     setForm({ name: "", description: "", price: "" });
     setEditingId(null);
-    fetchProducts();
+    await fetchProducts();
   };
 
   const handleEdit = (product) => {
@@ -70,7 +71,26 @@ function App() {
               </li>
           ))}
         </ul>
+
+        <Link to="/register">Register</Link><br/>
+        <Link to="/">Home</Link>
+
+
+
+
+        {/*<Router>*/}
+        {/*  <Routes>*/}
+        {/*    <Route path="/" element={<MainApp />} />*/}
+        {/*    <Route path="/register" element={<Register />} />*/}
+        {/*  </Routes>*/}
+        {/*</Router>*/}
+
+        {/*<Link to="/register">*/}
+        {/*  <button>Register</button>*/}
+        {/*</Link>*/}
       </div>
+
+
   );
 }
 
